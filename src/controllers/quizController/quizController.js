@@ -2,14 +2,12 @@ const client = require('../../config/database')
 
 // Post api for quizzes
 exports.postQuiz =  async (req, res) => {
-    console.log('req', req.body)
     const quizData = req.body;
 
     // validate quizData
     let {validate, errorMessage} = validateData(quizData)
 
     if(validate){
-        console.log('successfully validated')
         try {
             // Start a database transaction
             // client = await client.connect()
@@ -30,7 +28,6 @@ exports.postQuiz =  async (req, res) => {
           } catch (err) {
             // Roll back the transaction and return an error
             await client.query('ROLLBACK');
-            console.error(err);
             res.status(500).json({ 
                 success: false,
                 error: 'internal server error',
