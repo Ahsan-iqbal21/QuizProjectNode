@@ -1,5 +1,5 @@
 # QuizProjectNode
- This is project to handle APIs related to a page that creates and displays quizzes
+ This is  a project that handles APIs related to a page that creates and displays quizzes
 
 # How to start the project
 1. Open project folder in the terminal
